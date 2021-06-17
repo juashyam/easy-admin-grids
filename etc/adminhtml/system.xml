@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="juashyam" translate="label" sortOrder="500">
+            <label>JUASHYAM</label>
+        </tab>
+        <section id="easy_admin_grids" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Easy Admin Grids</label>
+            <tab>juashyam</tab>
+            <resource>Juashyam_EasyAdminGrids::config</resource>
+            <group id="configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Configuration</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="cms" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>CMS</label>
+                <field id="replace_block" translate="label" type="select" sortOrder="1" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace CMS Block Grid</label>
+                    <comment><![CDATA[Replace the native CMS Block Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="replace_page" translate="label" type="select" sortOrder="1" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace CMS Page Grid</label>
+                    <comment><![CDATA[Replace the native CMS Page Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
