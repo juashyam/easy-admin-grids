@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
     <source>
-        <!--<collection>\Magento\Customer\Model\ResourceModel\Customer\Collection</collection>-->
         <query>
             <select>
                 <from table="customer_grid_flat" as="e"/>
