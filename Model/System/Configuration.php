@@ -11,6 +11,7 @@ class Configuration
     const XML_PATH_IS_ENABLED = "easy_admin_grids/configuration/enabled";
     const XML_PATH_REPLACE_CMS_BLOCK = "easy_admin_grids/cms/replace_block";
     const XML_PATH_REPLACE_CMS_PAGE = "easy_admin_grids/cms/replace_page";
+    const XML_PATH_REPLACE_CUSTOMER_LISTING = "easy_admin_grids/customer/replace_listing";
 
     /**
      * @var ScopeConfigInterface
@@ -54,6 +55,17 @@ class Configuration
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_REPLACE_CMS_PAGE,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * @return mixed
+     */
+    public function canReplaceCustomerListing()
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_REPLACE_CUSTOMER_LISTING,
             ScopeInterface::SCOPE_STORE
         );
     }

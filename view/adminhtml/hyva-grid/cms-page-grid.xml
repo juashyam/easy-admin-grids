@@ -8,15 +8,15 @@
             <column name="id" label="ID"/>
             <column name="title"/>
             <column name="identifier" label="URL Key"/>
-            <column name="page_layout" label="Layout"/>
-            <column name="store_id" type="multiselect" label="Store View" source="Juashyam\EasyAdminGrids\ViewModel\Listing\Column\Cms\Store"/>
-            <column name="is_active" type="select" label="Status" source="Magento\Cms\Model\Page\Source\IsActive"/>
+            <column name="page_layout" label="Layout" source="\Magento\Cms\Model\Page\Source\PageLayout"/>
+            <column name="store_id" label="Store View" type="store_id"/>
+            <column name="is_active" label="Status" source="\Magento\Cms\Model\Page\Source\IsActive"/>
             <column name="creation_time" label="Created"/>
             <column name="update_time" label="Modified"/>
         </include>
     </columns>
     <actions idColumn="id">
-        <action id="edit" label="Edit" url="*/*/edit" idParam="page_id"/>
+        <action id="edit" label="Edit" url="cms/page/edit" idParam="page_id"/>
     </actions>
     <entityConfig>
         <label>
@@ -26,7 +26,7 @@
     </entityConfig>
     <navigation>
         <buttons>
-            <button id="new" label="Add New Page" url="*/*/new/"/>
+            <button id="new" label="Add New Page" url="cms/page/new/"/>
         </buttons>
         <pager>
             <defaultPageSize>20</defaultPageSize>
@@ -40,11 +40,10 @@
             <filter column="id"/>
             <filter column="title"/>
             <filter column="identifier"/>
-            <filter column="page_layout" filterType="Hyva\Admin\Model\GridFilter\SelectFilter" source="Magento\Cms\Model\Page\Source\PageLayout"/>
-            <filter column="store_id" filterType="Hyva\Admin\Model\GridFilter\SelectFilter" source="Magento\Cms\Ui\Component\Listing\Column\Cms\Options"/>
+            <filter column="page_layout" filterType="\Hyva\Admin\Model\GridFilter\SelectFilter" source="\Magento\Cms\Model\Page\Source\PageLayout"/>
             <filter column="is_active"/>
-            <filter column="creation_time" filterType="Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
-            <filter column="update_time" filterType="Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
+            <filter column="creation_time" filterType="\Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
+            <filter column="update_time" filterType="\Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
         </filters>
     </navigation>
 </grid>

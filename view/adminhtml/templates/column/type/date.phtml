@@ -1,0 +1,10 @@
+<?php declare(strict_types=1);
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Hyva\Admin\ViewModel\HyvaGrid\CellInterface $cell */
+$cell = $block->getData('cell');
+$value = $escaper->escapeHtmlAttr($cell->getTextValue());
+?>
+<?php if ($value): ?>
+    <span><?= DateTime::createFromFormat('Y-m-d', $value)->format('M d, Y') ?></span>
+<?php endif; ?>

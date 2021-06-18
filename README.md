@@ -1,4 +1,4 @@
-# Easy Admin Grids [IN PROGRESS]
+# Easy Admin Grids
 A replacement of Magento 2 UI components to create Admin Grids by using [Hyvä Admin](https://github.com/hyva-themes/magento2-hyva-admin) module.
 
 ## Installation
@@ -10,16 +10,23 @@ php bin/magento setup:upgrade
 ```
 
 ## Features
-- Replace CMS Block Grid with the Hyvä Admin Grid 
-- Replace CMS Page Grid with the Hyvä Admin Grid
-- Easy configuration to enable or disable Replaced Hyvä Admin Grids
+As of now, this module replaces following native grids out of the box.
+- Content (Admin → Content)
+  - Block
+  - Pages
+- Customers (Admin → Customers)
+  - All Customers
 
 ## To Do List
-* CMS Block Grid (Admin → Contents → Elements → Blocks) :: Completed
-* CMS Page Grid (Admin → Contents → Elements → Pages) :: Completed
-* Customer Grid (Admin → Customers → All Customers) :: In Progress
-* Catalog Price Rule (Admin → Marketing → Promotions → Catalog Price Rule) :: Not Started
-* Cart Price Rules (Admin → Marketing → Promotions → Cart Price Rules) :: Not Started
+- Customers (Admin → Customers)
+  - Customers Now Online
+  - Customer Segments
+  - Customer Groups
+- Marketing (Admin → Marketing)
+  - Cart Price Rules
+  - Catalog Price Rule
+  - Gift Card Accounts
+  - Related Products Rules
 
 ## Authors
 

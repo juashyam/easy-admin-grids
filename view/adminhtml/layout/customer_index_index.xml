@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="hyva_admin_grid"/>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="customer_listing">
+                <visibilityCondition name="can_view_native_customer_listing" className="Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\CanViewNativeCustomerListing"/>
+            </uiComponent>
+            <block class="Juashyam\EasyAdminGrids\Block\Adminhtml\Grid" name="customer-grid" ifconfig="easy_admin_grids/customer/replace_listing">
+                <arguments>
+                    <argument name="grid_name" xsi:type="string">customer-grid</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

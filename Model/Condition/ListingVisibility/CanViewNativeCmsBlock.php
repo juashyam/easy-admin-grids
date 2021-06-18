@@ -18,10 +18,9 @@ class CanViewNativeCmsBlock extends ListingVisibility
     const CONDITION_NAME = 'can_view_native_cms_block';
 
     /**
-     * Validate if notification popup can be shown and set the notification flag
+     * Validate logical condition for ui component
      *
      * @param array $arguments Attributes from element node.
-     * @inheritdoc
      */
     public function isVisible(array $arguments): bool
     {
