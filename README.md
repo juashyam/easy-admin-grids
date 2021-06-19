@@ -3,6 +3,8 @@ A replacement of Magento 2 UI components to create Admin Grids by using [Hyvä A
 
 ## Installation
 
+> This package is not installable via Composer 1.x, please make sure you upgrade to Composer 2+.
+
 ```
 composer require juashyam/easy-admin-grids
 php bin/magento module:enable Juashyam_EasyAdminGrids
