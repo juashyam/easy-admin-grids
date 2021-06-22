@@ -1,5 +1,4 @@
-# Easy Admin Grids
-A replacement of Magento 2 UI components to create Admin Grids by using [Hyvä Admin](https://github.com/hyva-themes/magento2-hyva-admin) module.
+![Easy Admin Grids](https://user-images.githubusercontent.com/13532448/122933343-313e9800-d38c-11eb-9af7-9ed3b5f00c6e.png)
 
 ## Installation
 
@@ -10,6 +9,11 @@ composer require juashyam/easy-admin-grids
 php bin/magento module:enable Juashyam_EasyAdminGrids
 php bin/magento setup:upgrade
 ```
+
+## Configuration
+Enable Easy Admin Grid in **Admin → Stores → Configuration → JUASHYAM → Easy Admin Grids**
+
+![Easy Admin Grids Configuration](https://user-images.githubusercontent.com/13532448/122933715-82e72280-d38c-11eb-9c0b-8febef854d45.png)
 
 ## Features
 As of now, this module replaces following native grids out of the box.
