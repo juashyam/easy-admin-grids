@@ -1,4 +1,6 @@
-![Easy Admin Grids](https://user-images.githubusercontent.com/13532448/122933343-313e9800-d38c-11eb-9af7-9ed3b5f00c6e.png)
+![Easy Admin Grids_New](https://user-images.githubusercontent.com/13532448/122935610-1a00aa00-d38e-11eb-8ba6-806288064800.png)
+
+Easy and joyful replacement of native UI component based Admin Grids using [Hyvä Admin](https://github.com/hyva-themes/magento2-hyva-admin) module.
 
 ## Installation
 
