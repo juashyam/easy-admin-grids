@@ -8,6 +8,9 @@ use Magento\Framework\View\Layout\Condition\VisibilityConditionInterface;
 
 abstract class ListingVisibility implements VisibilityConditionInterface
 {
+    /**
+     * @var Configuration
+     */
     public $configuration;
 
     /**

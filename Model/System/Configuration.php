@@ -4,14 +4,21 @@ declare(strict_types=1);
 namespace Juashyam\EasyAdminGrids\Model\System;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use \Magento\Store\Model\ScopeInterface;
+use Magento\Store\Model\ScopeInterface;
 
 class Configuration
 {
+    /**@#+
+     * @const string System Configuration Path
+     */
     const XML_PATH_IS_ENABLED = "easy_admin_grids/configuration/enabled";
     const XML_PATH_REPLACE_CMS_BLOCK = "easy_admin_grids/cms/replace_block";
     const XML_PATH_REPLACE_CMS_PAGE = "easy_admin_grids/cms/replace_page";
     const XML_PATH_REPLACE_CUSTOMER_LISTING = "easy_admin_grids/customer/replace_listing";
+    const XML_PATH_REPLACE_CUSTOMER_NOW_ONLINE_LISTING = "easy_admin_grids/customer/replace_now_online";
+    const XML_PATH_REPLACE_CUSTOMER_GROUP_LISTING = "easy_admin_grids/customer/replace_group";
+    const XML_PATH_REPLACE_CUSTOMER_SEGMENT_LISTING = "easy_admin_grids/customer/replace_segment";
+    /**#@-*/
 
     /**
      * @var ScopeConfigInterface
@@ -66,6 +73,39 @@ class Configuration
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_REPLACE_CUSTOMER_LISTING,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * @return mixed
+     */
+    public function canReplaceCustomerNowOnlineListing()
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_REPLACE_CUSTOMER_NOW_ONLINE_LISTING,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * @return mixed
+     */
+    public function canReplaceCustomerGroupListing()
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_REPLACE_CUSTOMER_GROUP_LISTING,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * @return mixed
+     */
+    public function canReplaceCustomerSegmentListing()
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_REPLACE_CUSTOMER_SEGMENT_LISTING,
             ScopeInterface::SCOPE_STORE
         );
     }
