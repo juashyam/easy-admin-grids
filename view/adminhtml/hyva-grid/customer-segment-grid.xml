@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <collection>\Magento\CustomerSegment\Model\ResourceModel\Segment\Collection</collection>
+    </source>
+    <columns>
+        <include>
+            <column name="segment_id" label="ID"/>
+            <column name="name" label="Segment"/>
+            <column name="is_active" label="Status">
+                <option value="1" label="Active"/>
+                <option value="0" label="Inactive"/>
+            </column>
+            <column name="website_ids" label="Web Site" type="website_id" source="Magento\Store\Model\ResourceModel\Website\Collection"/>
+        </include>
+    </columns>
+    <actions idColumn="segment_id">
+        <action id="edit" label="Edit" url="customersegment/index/edit" idParam="id"/>
+    </actions>
+    <entityConfig>
+        <label>
+            <singular>Customer Segment</singular>
+            <plural>Customer Segments</plural>
+        </label>
+    </entityConfig>
+    <navigation>
+        <buttons>
+            <button id="new" label="Add Segment" url="customersegment/index/new/"/>
+        </buttons>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>segment_id</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+        <filters>
+            <filter column="segment_id"/>
+            <filter column="name"/>
+            <filter column="is_active"/>
+        </filters>
+    </navigation>
+</grid>

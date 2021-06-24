@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <query>
+            <select>
+                <from table="customer_visitor" as="main_table"/>
+                <join type="inner" table="customer_entity" as="customer">
+                    <on>customer.entity_id = main_table.customer_id</on>
+                    <columns>
+                        <column name="main_table.visitor_id" as="visitor_id"/>
+                        <column name="customer.firstname" as="firstname"/>
+                        <column name="customer.lastname" as="lastname"/>
+                        <column name="customer.email" as="email"/>
+                        <column name="main_table.last_visit_at" as="last_visit_at"/>
+                        <expression as="visitor_type">IF((main_table.customer_id IS NOT NULL AND main_table.customer_id != 0), "c", "v")</expression>
+                    </columns>
+                </join>
+            </select>
+        </query>
+    </source>
+    <columns>
+        <include>
+            <column name="visitor_id" label="ID" type="int"/>
+            <column name="firstname" label="First Name"/>
+            <column name="lastname" label="Last Name"/>
+            <column name="email"/>
+            <column name="last_visit_at" label="Last Activity" type="string"/>
+            <column name="visitor_type" label="Type" source="\Magento\Customer\Ui\Component\Listing\Column\Online\Type\Options"/>
+        </include>
+    </columns>
+    <entityConfig>
+        <label>
+            <singular>Customers Now Online</singular>
+            <plural>Customers Now Online</plural>
+        </label>
+    </entityConfig>
+    <navigation>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>visitor_id</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+        <filters>
+            <filter column="visitor_id"/>
+            <filter column="firstname"/>
+            <filter column="lastname"/>
+            <filter column="email"/>
+            <filter column="last_visit_at" filterType="\Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
+        </filters>
+    </navigation>
+</grid>

@@ -36,6 +36,21 @@
                     <comment><![CDATA[Replace the native Customers Grid with the Easy Admin Grid.]]></comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="replace_now_online" translate="label" type="select" sortOrder="2" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Customers Now Online Grid</label>
+                    <comment><![CDATA[Replace the native Customers Now Online Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="replace_group" translate="label" type="select" sortOrder="3" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Customers Group Grid</label>
+                    <comment><![CDATA[Replace the native Customers Group Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="replace_segment" translate="label" type="select" sortOrder="4" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Customers Segment Grid</label>
+                    <comment><![CDATA[Replace the native Customers Segment Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
         </section>
     </system>
