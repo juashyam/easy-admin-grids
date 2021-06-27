@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <collection>\Magento\SalesRule\Model\ResourceModel\Rule\Quote\Collection</collection>
+    </source>
+    <columns>
+        <include>
+            <column name="rule_id" label="ID"/>
+            <column name="name" label="Rule"/>
+            <column name="code" label="Coupon Code"/>
+            <column name="sort_order" label="Priority"/>
+            <column name="is_active" label="Status">
+                <option value="1" label="Active"/>
+                <option value="0" label="Inactive"/>
+            </column>
+            <column name="website_ids" label="Web Site" type="website_id" source="\Magento\Store\Model\ResourceModel\Website\Collection"/>
+        </include>
+    </columns>
+    <actions idColumn="rule_id">
+        <action id="edit" label="Edit" url="sales_rule/promo_quote/edit/" idParam="id"/>
+    </actions>
+    <entityConfig>
+        <label>
+            <singular>Cart Price Rule</singular>
+            <plural>Cart Price Rules</plural>
+        </label>
+    </entityConfig>
+    <navigation>
+        <buttons>
+            <button id="new" label="Add New Rule" url="sales_rule/promo_quote/new/"/>
+        </buttons>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>sort_order</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+        <filters>
+            <filter column="rule_id"/>
+            <filter column="name"/>
+            <filter column="code"/>
+            <filter column="sort_order"/>
+            <filter column="is_active"/>
+        </filters>
+    </navigation>
+</grid>

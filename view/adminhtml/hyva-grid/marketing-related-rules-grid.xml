@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <query>
+            <select>
+                <from table="magento_targetrule" as="main_table"/>
+                <columns>
+                    <column name="rule_id"/>
+                    <column name="name"/>
+                    <column name="sort_order"/>
+                    <column name="apply_to"/>
+                    <column name="is_active"/>
+                    <expression as="from_date">IF((from_date IS NOT NULL), from_date, "--")</expression>
+                    <expression as="to_date">IF((to_date IS NOT NULL), to_date, "--")</expression>
+                </columns>
+            </select>
+        </query>
+    </source>
+    <columns>
+        <include>
+            <column name="rule_id" label="ID"/>
+            <column name="name" label="Rule"/>
+            <column name="from_date" label="Start"/>
+            <column name="to_date" label="End"/>
+            <column name="sort_order" label="Priority"/>
+            <column name="apply_to" label="Applies To" source="\Juashyam\EasyAdminGrids\Model\Config\Source\TargetRuleApplies"/>
+            <column name="is_active" label="Status">
+                <option value="1" label="Active"/>
+                <option value="0" label="Inactive"/>
+            </column>
+        </include>
+    </columns>
+    <actions idColumn="rule_id">
+        <action id="edit" label="Edit" url="admin/targetrule/edit/" idParam="id"/>
+    </actions>
+    <entityConfig>
+        <label>
+            <singular>Related Products Rule</singular>
+            <plural>Related Products Rules</plural>
+        </label>
+    </entityConfig>
+    <navigation>
+        <buttons>
+            <button id="new" label="Add Rule" url="admin/targetrule/new/"/>
+        </buttons>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>name</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+        <filters>
+            <filter column="rule_id"/>
+            <filter column="name"/>
+            <filter column="from_date" filterType="\Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
+            <filter column="to_date" filterType="\Hyva\Admin\Model\GridFilter\DateRangeFilter"/>
+            <filter column="sort_order"/>
+            <filter column="apply_to"/>
+            <filter column="is_active"/>
+        </filters>
+    </navigation>
+</grid>

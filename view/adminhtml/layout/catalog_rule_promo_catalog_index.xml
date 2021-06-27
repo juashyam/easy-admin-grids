@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="hyva_admin_grid"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Juashyam\EasyAdminGrids\Block\Adminhtml\Marketing\CatalogRule" name="adminhtml.promo.catalog.grid.container"/>
+            <block class="Juashyam\EasyAdminGrids\Block\Adminhtml\Grid" name="marketing-catalog-rules-grid" ifconfig="easy_admin_grids/marketing/replace_catalog_rule">
+                <arguments>
+                    <argument name="grid_name" xsi:type="string">marketing-catalog-rules-grid</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
