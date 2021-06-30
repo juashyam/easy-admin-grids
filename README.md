@@ -28,9 +28,6 @@ As of now, this module replaces following native grids out of the box.
   - Pages
 - Customers (Admin → Customers)
   - All Customers
-
-## To Do List
-- Customers (Admin → Customers)
   - Customers Now Online
   - Customer Segments
   - Customer Groups

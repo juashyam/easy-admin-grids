@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="content">
             <uiComponent name="customer_listing">
-                <visibilityCondition name="can_view_native_customer_listing" className="Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\CanViewNativeCustomerListing"/>
+                <visibilityCondition name="can_view_native_customer_listing" className="Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\Customer\CanViewNativeCustomerListing"/>
             </uiComponent>
             <block class="Juashyam\EasyAdminGrids\Block\Adminhtml\Grid" name="customer-grid" ifconfig="easy_admin_grids/customer/replace_listing">
                 <arguments>

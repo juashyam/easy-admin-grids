@@ -5,5 +5,6 @@
             <argument name="gridTemplate" xsi:type="string">Hyva_Admin::grid.phtml</argument>
         </arguments>
     </type>
+    <preference for="Magento\SalesRule\Block\Adminhtml\Promo\Quote" type="Juashyam\EasyAdminGrids\Block\Adminhtml\Marketing\CartRule"/>
 </config>
 

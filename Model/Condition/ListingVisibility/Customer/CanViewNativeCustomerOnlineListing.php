@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility;
+namespace Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\Customer;
 
 use Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility;
 
 /**
- * Dynamic validator for CMS block, control listing visibility.
+ * Dynamic validator for Customer online listing page, control listing visibility.
  */
-class CanViewNativeCmsBlock extends ListingVisibility
+class CanViewNativeCustomerOnlineListing extends ListingVisibility
 {
     /**
      * Unique condition name.
      *
      * @var string
      */
-    const CONDITION_NAME = 'can_view_native_cms_block';
+    const CONDITION_NAME = 'can_view_native_customer_online_listing';
 
     /**
      * Validate logical condition for ui component
@@ -24,7 +24,7 @@ class CanViewNativeCmsBlock extends ListingVisibility
      */
     public function isVisible(array $arguments): bool
     {
-        if ($this->configuration->isEnabled() && $this->configuration->canReplaceCmsBlock()) {
+        if ($this->configuration->isEnabled() && $this->configuration->canReplaceCustomerNowOnlineListing()) {
             return false;
         }
 

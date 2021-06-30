@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <collection>\Magento\Customer\Model\ResourceModel\Group\Grid\Collection</collection>
+    </source>
+    <columns>
+        <include>
+            <column name="customer_group_id" label="ID"/>
+            <column name="customer_group_code" label="Group"/>
+            <column name="tax_class_id" label="Tax Class" source="\Magento\Tax\Model\TaxClass\Source\Customer"/>
+        </include>
+    </columns>
+    <actions idColumn="customer_group_id">
+        <action id="edit" label="Edit" url="customer/group/edit" idParam="id"/>
+    </actions>
+    <entityConfig>
+        <label>
+            <singular>Customer Group</singular>
+            <plural>Customer Groups</plural>
+        </label>
+    </entityConfig>
+    <navigation>
+        <buttons>
+            <button id="new" label="Add New Customer Group" url="customer/group/new/"/>
+        </buttons>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>customer_group_id</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+        <filters>
+            <filter column="customer_group_id"/>
+            <filter column="customer_group_code"/>
+            <filter column="tax_class_id"/>
+        </filters>
+    </navigation>
+</grid>

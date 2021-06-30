@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="content">
             <uiComponent name="cms_page_listing">
-                <visibilityCondition name="can_view_native_cms_page" className="Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\CanViewNativeCmsPage"/>
+                <visibilityCondition name="can_view_native_cms_page" className="Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\Cms\CanViewNativeCmsPage"/>
             </uiComponent>
             <block class="Juashyam\EasyAdminGrids\Block\Adminhtml\Grid" name="cms-page-grid" ifconfig="easy_admin_grids/cms/replace_page">
                 <arguments>

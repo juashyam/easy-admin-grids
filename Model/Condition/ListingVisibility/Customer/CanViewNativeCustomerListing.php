@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility;
+namespace Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility\Customer;
 
 use Juashyam\EasyAdminGrids\Model\Condition\ListingVisibility;
 

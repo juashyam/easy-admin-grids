@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
+    <source>
+        <collection>\Magento\CatalogRule\Model\ResourceModel\Grid\Collection</collection>
+    </source>
+    <columns>
+        <include>
+            <column name="rule_id" label="ID"/>
+            <column name="name" label="Rule"/>
+            <column name="sort_order" label="Priority"/>
+            <column name="website_ids" label="Web Site" type="website_id" source="Magento\Store\Model\ResourceModel\Website\Collection"/>
+        </include>
+    </columns>
+    <actions idColumn="rule_id">
+        <action id="edit" label="Edit" url="catalog_rule/promo_catalog/edit" idParam="id"/>
+    </actions>
+    <entityConfig>
+        <label>
+            <singular>Catalog Price Rule</singular>
+            <plural>Catalog Price Rules</plural>
+        </label>
+    </entityConfig>
+    <navigation>
+        <buttons>
+            <button id="new" label="Add New Rule" url="catalog_rule/promo_catalog/new/"/>
+        </buttons>
+        <pager>
+            <defaultPageSize>20</defaultPageSize>
+            <pageSizes>20,30,50,100,200</pageSizes>
+        </pager>
+        <sorting>
+            <defaultSortByColumn>name</defaultSortByColumn>
+            <defaultSortDirection>asc</defaultSortDirection>
+        </sorting>
+        <filters>
+            <filter column="rule_id" filterType="\Hyva\Admin\Model\GridFilter\ValueRangeFilter"/>
+            <filter column="name"/>
+            <filter column="sort_order"/>
+        </filters>
+    </navigation>
+</grid>
