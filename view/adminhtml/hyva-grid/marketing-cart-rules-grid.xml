@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Hyva_Admin:etc/hyva-grid.xsd">
     <source>
-        <collection>\Magento\SalesRule\Model\ResourceModel\Rule\Quote\Collection</collection>
+        <repositoryListMethod>\Magento\SalesRule\Api\RuleRepositoryInterface::getList</repositoryListMethod>
     </source>
     <columns>
         <include>
             <column name="rule_id" label="ID"/>
             <column name="name" label="Rule"/>
-            <column name="code" label="Coupon Code"/>
             <column name="sort_order" label="Priority"/>
             <column name="is_active" label="Status">
                 <option value="1" label="Active"/>
@@ -40,7 +39,6 @@
         <filters>
             <filter column="rule_id"/>
             <filter column="name"/>
-            <filter column="code"/>
             <filter column="sort_order"/>
             <filter column="is_active"/>
         </filters>
