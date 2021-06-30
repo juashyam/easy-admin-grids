@@ -27,8 +27,6 @@ As of now, this module replaces following native grids out of the box.
   - Customers Now Online
   - Customer Segments
   - Customer Groups
-
-## To Do List
 - Marketing (Admin → Marketing)
   - Cart Price Rules
   - Catalog Price Rule
