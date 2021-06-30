@@ -52,6 +52,29 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
+            <group id="marketing" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Marketing</label>
+                <field id="replace_catalog_rule" translate="label" type="select" sortOrder="1" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Catalog Price Rule Grid</label>
+                    <comment><![CDATA[Replace the native Catalog Price Rule Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="replace_related_product_rule" translate="label" type="select" sortOrder="2" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Related Products Rules Grid</label>
+                    <comment><![CDATA[Replace the native Related Products Rules Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="replace_cart_rule" translate="label" type="select" sortOrder="3" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Cart Price Rules Grid</label>
+                    <comment><![CDATA[Replace the native Cart Price Rules Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="replace_giftacc_rule" translate="label" type="select" sortOrder="4" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Replace Gift Card Accounts Grid</label>
+                    <comment><![CDATA[Replace the native Gift Card Accounts Grid with the Easy Admin Grid.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>
